@@ -6,7 +6,7 @@
 
 ## Tech stack and constraints
 
-- **Runtime:** Node.js **22.5+** (`node:sqlite` minimum); **Node 25** is the primary CI and dry-run target. TypeScript `strict: true`. `@types/node` tracks the tested major (25). CI runs latest **22.x** and **25** (not a pinned 22.5.0 job — GHA’s 22.5.x pin was flaky with sqlite ingest).
+- **Runtime:** Node.js **25+** (built-in `node:sqlite`). TypeScript `strict: true`. `@types/node` tracks the tested major. CI runs **Node 25**; local runs typically use Podman/Docker Compose or the packaged image rather than pinning an older host Node.
 - **Database:** Built-in `node:sqlite` (`DatabaseSync`) only. Do **not** add `sqlite3` or `better-sqlite3`.
 - **SQLite:** Open every connection with `PRAGMA journal_mode = DELETE;` and `PRAGMA foreign_keys = ON;` (single-file DB safe for cloud sync folders).
 - **Money:** Store amounts as **integer cents** (`INTEGER`), never `REAL`.
