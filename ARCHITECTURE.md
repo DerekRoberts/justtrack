@@ -4,7 +4,7 @@
 
 Local-first cashflow tracking from recurring OFX/QFX dumps. Milestone 1 covers storage, parsing, and idempotent CLI ingest. Later milestones add rules, SQL rollups, and a localhost UI.
 
-**Runtime:** Node **22.5+** (SQLite built-in); CI and dry-run testing target **Node 25**.
+**Runtime:** Node **25+** (SQLite built-in). CI tests on **Node 25**; Compose/Containerfile is the usual local run path.
 
 ## Data directory layout
 

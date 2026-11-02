@@ -4,7 +4,7 @@ Local-first personal **cashflow** tracker: drop bank OFX/QFX exports, deduplicat
 
 ## Requirements
 
-- **Node.js 22.5+** (built-in `node:sqlite` and the native test runner). CI runs latest **22.x** and **25**; **Node 25** is the primary dry-run target.
+- **Node.js 25+** if you run on the host (built-in `node:sqlite` and the native test runner). **Podman/Docker Compose** (see below) is the easy path and does not require matching your host Node version.
 - npm
 
 ## Quick start
@@ -32,7 +32,7 @@ antibudget ingest
 
 Copy synthetic exports from `fixtures/` into your inbox for a dry run. **Never commit real `.ofx`, `.qfx`, or `.db` files** — see `.gitignore`.
 
-## First real-data dry run (Node 25)
+## First real-data dry run
 
 Use your own OFX/QFX exports locally; keep them out of git.
 
